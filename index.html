@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>טבעת המצפן | עמית לדרך × Diana Rafael</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:     #12B5C5;
+      --teal-dk:  #0A8A96;
+      --teal-bg:  #07191C;
+      --orange:   #E87840;
+      --cream:    #FAF8F3;
+      --warm:     #F3EFE8;
+      --ring-bg:  #C8B898;   /* matches the ring photo background */
+      --white:    #FFFFFF;
+      --text:     #1A1A1A;
+      --gray:     #6B7280;
+      --light:    #E8E3DC;
+      --gold:     #C8A84B;
+      --gold-dk:  #96740F;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Heebo',sans-serif; color:var(--text); background:var(--cream); overflow-x:hidden; }
+
+    img { display:block; width:100%; height:100%; object-fit:cover; }
+
+    /* ── utilities ── */
+    .lbl {
+      font-size:10px; font-weight:700; letter-spacing:3.5px;
+      text-transform:uppercase; color:var(--teal);
+    }
+    .lbl-orange { color:var(--orange); }
+    .lbl-lt     { color:rgba(255,255,255,0.45); }
+    .rule { width:44px; height:1px; background:var(--teal); margin:16px 0; }
+    .rule-c { margin:16px auto; }
+    .rule-o { background:var(--orange); }
+
+    /* ════════════════════════════════
+       HERO  —  cream left, ring right
+    ════════════════════════════════ */
+    .hero {
+      display:grid; grid-template-columns:1fr 1fr;
+      height:100vh; min-height:680px;
+      background:var(--cream);
+    }
+    .hero-l {
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      padding:80px 64px; z-index:2; text-align:center;
+    }
+    .hero-logo { margin-bottom:44px; }
+    .hero-logo img { height:180px; width:auto; object-fit:contain; border-radius:50%; }
+
+    .hero-collab { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:18px; }
+    .hero-h1 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(52px,6.5vw,90px); font-weight:900;
+      color:var(--text); line-height:1.0; margin-bottom:4px;
+    }
+    .hero-h1-sub {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(52px,6.5vw,90px); font-weight:300;
+      color:var(--orange); line-height:1.0; margin-bottom:32px;
+    }
+    .hero-tag {
+      font-size:16px; font-weight:300; color:#666;
+      line-height:1.9; max-width:360px; margin-bottom:52px;
+      margin-left:auto; margin-right:auto;
+    }
+    .hero-scroll {
+      display:flex; align-items:center; justify-content:center; gap:12px;
+      font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:#999;
+    }
+    .hero-scroll-ln { width:32px; height:1px; background:var(--light); }
+
+    .hero-r { position:relative; overflow:hidden; background:var(--ring-bg); }
+    .hero-r img { object-position:center; }
+    /* subtle fade to blend with cream */
+    .hero-r::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(to right, var(--cream) 0%, transparent 20%);
+      pointer-events:none;
+    }
+
+    /* ════════════════════════════════
+       INSPIRATION
+    ════════════════════════════════ */
+    .s-insp { background:var(--cream); }
+
+    .insp-intro { display:grid; grid-template-columns:1fr 1fr; min-height:80vh; }
+    .insp-txt {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:96px 64px;
+    }
+    .insp-txt h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(32px,3.8vw,56px); font-weight:700;
+      color:var(--text); line-height:1.2; margin-bottom:24px;
+    }
+    .insp-txt h2 em { font-style:normal; color:var(--teal-dk); }
+    .insp-txt p { font-size:16px; font-weight:300; color:#555; line-height:1.9; margin-bottom:16px; max-width:440px; }
+    .insp-txt blockquote {
+      border-right:3px solid var(--teal); padding:16px 20px; margin-top:24px;
+      background:white; border-radius:0 6px 6px 0;
+    }
+    .insp-txt blockquote p { font-size:15px; font-style:italic; color:var(--text); margin:0 0 8px; max-width:none; }
+    .insp-txt blockquote cite { font-size:11px; font-style:normal; font-weight:700; color:var(--teal-dk); letter-spacing:1.5px; text-transform:uppercase; }
+
+    .insp-img { overflow:hidden; }
+    .insp-img img { height:100%; min-height:500px; object-position:center top; }
+
+    /* 3-cell photo grid */
+    .insp-grid {
+      display:grid; grid-template-columns:1.5fr 1fr 1fr;
+      grid-template-rows:420px; gap:3px;
+    }
+    .insp-grid > div { position:relative; overflow:hidden; }
+    .insp-grid img   { height:100%; }
+    .ic { /* image caption */
+      position:absolute; bottom:0; right:0; left:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 100%);
+      padding:36px 18px 14px;
+    }
+    .ic p   { font-size:13px; font-weight:600; color:white; }
+    .ic span { font-size:11px; color:rgba(255,255,255,0.6); }
+
+    /* press strip — only dark section here */
+    .press {
+      background:var(--teal-bg); padding:22px 64px;
+      display:flex; align-items:center; gap:36px; flex-wrap:wrap;
+    }
+    .press-lbl { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.25); flex-shrink:0; }
+    .press-item { font-size:13px; color:rgba(255,255,255,0.45); font-style:italic; white-space:nowrap; }
+    .press-item strong { color:rgba(255,255,255,0.7); font-style:normal; }
+    .press-sep { width:1px; height:18px; background:rgba(255,255,255,0.1); flex-shrink:0; }
+
+    /* ════════════════════════════════
+       COMPASS POWER  —  warm light bg
+    ════════════════════════════════ */
+    .s-power { background:var(--warm); }
+    .power-wrap { display:grid; grid-template-columns:1fr 1fr; min-height:88vh; }
+
+    .power-img {
+      overflow:hidden;
+      background:var(--ring-bg); /* warm taupe matches ring photo bg */
+      display:flex; align-items:center; justify-content:center;
+    }
+    .power-img img {
+      object-fit:contain;          /* ← shows FULL ring, no crop */
+      padding:40px;
+    }
+
+    .power-txt {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:96px 64px;
+    }
+    .power-txt h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(34px,4vw,60px); font-weight:900;
+      color:var(--text); line-height:1.1; margin-bottom:24px;
+    }
+    .power-txt h2 span { color:var(--orange); }
+    .power-txt p { font-size:16px; font-weight:300; color:#555; line-height:1.9; margin-bottom:18px; max-width:420px; }
+    .power-txt p strong { color:var(--teal-dk); font-weight:600; }
+
+    .power-pts { list-style:none; margin-top:20px; }
+    .power-pts li { display:flex; align-items:flex-start; gap:14px; margin-bottom:18px; }
+    .pt-n  { font-size:10px; font-weight:700; color:var(--teal); letter-spacing:2px; min-width:22px; margin-top:4px; }
+    .pt-b strong { display:block; font-size:14px; color:var(--text); margin-bottom:2px; }
+    .pt-b span   { font-size:13px; color:var(--gray); line-height:1.6; }
+
+    /* ════════════════════════════════
+       COLLECTION
+    ════════════════════════════════ */
+    .s-coll { background:var(--white); }
+
+    .coll-hd {
+      text-align:center; padding:96px 64px 56px;
+      border-bottom:1px solid var(--light);
+    }
+    .coll-hd h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(36px,4.5vw,62px); font-weight:700;
+      color:var(--text); margin-bottom:12px;
+    }
+    .coll-hd p { font-size:16px; font-weight:300; color:var(--gray); max-width:480px; margin:0 auto; line-height:1.8; }
+
+    /* Gender row — image + specs, no per-variant images */
+    .gender-row {
+      display:grid; grid-template-columns:1fr 1fr;
+      min-height:500px; border-bottom:1px solid var(--light);
+    }
+    .gender-row.rev .g-img  { order:2; }
+    .gender-row.rev .g-info { order:1; }
+
+    .g-img {
+      overflow:hidden;
+      background:var(--ring-bg); /* warm taupe */
+    }
+    .g-img img { object-fit:contain; padding:40px; } /* ← FULL ring visible */
+
+    .g-info {
+      display:flex; flex-direction:column; justify-content:center;
+      padding:64px; background:var(--cream);
+    }
+    .g-gender {
+      font-size:10px; letter-spacing:3px; text-transform:uppercase;
+      color:var(--teal-dk); margin-bottom:10px;
+    }
+    .g-name {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(28px,3vw,44px); font-weight:700;
+      color:var(--text); line-height:1.1; margin-bottom:16px;
+    }
+    .g-desc { font-size:15px; font-weight:300; color:#555; line-height:1.8; margin-bottom:24px; max-width:380px; }
+    .g-vars { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .g-vars li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:14px; color:var(--text);
+    }
+    .g-vars li::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--teal); flex-shrink:0; margin-top:6px;
+    }
+    .g-vars li strong { font-weight:600; }
+    .g-vars li span   { font-weight:300; color:var(--gray); }
+
+    /* ════════════════════════════════
+       TESTIMONIALS  —  dark teal
+    ════════════════════════════════ */
+    .s-quotes {
+      background:var(--teal-bg); padding:104px 64px;
+      position:relative; overflow:hidden;
+    }
+    .s-quotes::before {
+      content:'"'; position:absolute; top:-60px; left:24px;
+      font-family:'Frank Ruhl Libre',serif; font-size:480px; font-weight:900;
+      color:rgba(18,181,197,0.05); line-height:1; pointer-events:none;
+    }
+    .q-hd { margin-bottom:56px; }
+    .q-hd h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(32px,4vw,52px); font-weight:700; color:white; margin-bottom:8px;
+    }
+    .q-hd p { font-size:14px; font-weight:300; color:rgba(255,255,255,0.4); }
+
+    .q-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+    .q-card {
+      background:rgba(255,255,255,0.04); border:1px solid rgba(18,181,197,0.1);
+      padding:36px 40px;
+    }
+    .q-card.feat { background:rgba(18,181,197,0.06); border-color:rgba(18,181,197,0.22); }
+    .q-m { font-family:'Frank Ruhl Libre',serif; font-size:56px; color:var(--teal); opacity:0.3; line-height:0.8; margin-bottom:12px; }
+    .q-t { font-size:15px; font-style:italic; font-weight:300; color:rgba(255,255,255,0.8); line-height:1.85; margin-bottom:22px; }
+    .q-card.feat .q-t { font-size:17px; }
+    .q-a { display:flex; align-items:center; gap:10px; }
+    .q-dot {
+      width:32px; height:32px; border-radius:50%;
+      background:rgba(18,181,197,0.1); border:1px solid rgba(18,181,197,0.25);
+      display:flex; align-items:center; justify-content:center; font-size:13px; flex-shrink:0;
+    }
+    .q-name { font-size:13px; font-weight:700; color:var(--teal); }
+    .q-role { font-size:11px; color:rgba(255,255,255,0.3); }
+
+    /* ════════════════════════════════
+       PRICING  —  white
+    ════════════════════════════════ */
+    .s-price { background:var(--white); padding:104px 64px; }
+    .p-hd { text-align:center; margin-bottom:60px; }
+    .p-hd h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(34px,4vw,56px); font-weight:700; color:var(--text); margin-bottom:10px;
+    }
+    .p-hd p { font-size:15px; font-weight:300; color:var(--gray); max-width:440px; margin:0 auto; line-height:1.8; }
+
+    .p-cols { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .p-tier { border-radius:4px; overflow:hidden; background:var(--cream); border:1px solid var(--light); }
+    .p-tier.prem { border-color:var(--gold); box-shadow:0 4px 24px rgba(200,168,75,0.1); }
+
+    .pt-h { padding:30px 36px; background:var(--text); }
+    .pt-h.gold { background:linear-gradient(135deg,#6B4C0A,#C8A84B 80%); }
+    .pt-lbl { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+    .pt-lbl.lt { color:rgba(255,255,255,0.5); }
+    .pt-ttl { font-family:'Frank Ruhl Libre',serif; font-size:28px; font-weight:700; color:white; margin-bottom:4px; }
+    .pt-sub { font-size:12px; color:rgba(255,255,255,0.4); }
+
+    .pt-b { padding:0 36px 24px; }
+    .pt-row { display:flex; justify-content:space-between; align-items:flex-end; padding:16px 0; border-bottom:1px solid var(--light); }
+    .pt-row:last-child { border-bottom:none; }
+    .pt-d  { font-size:13px; color:var(--text); font-weight:500; }
+    .pt-d small { display:block; font-size:11px; color:var(--gray); font-weight:400; margin-top:2px; }
+    .pt-p  { font-size:20px; font-weight:800; color:var(--text); }
+    .pt-p.g{ color:var(--gold-dk); }
+
+    /* ════════════════════════════════
+       PACKAGING  —  cream
+    ════════════════════════════════ */
+    .s-pack { background:var(--cream); }
+
+    .pack-hd {
+      display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
+      padding:96px 64px 52px;
+    }
+    .pack-hd h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(36px,4.5vw,64px); font-weight:900; color:var(--text); line-height:1.05;
+    }
+    .pack-hd h2 em { font-style:normal; color:var(--teal-dk); }
+    .pack-hd p { font-size:15px; font-weight:300; color:#555; line-height:1.9; max-width:400px; }
+
+    /* full-width box-cover only */
+    .pack-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-rows:560px;
+      gap:0;
+    }
+    .pk { position:relative; overflow:hidden; background:var(--warm); }
+    .pk img { height:100%; }
+    /* contain for product images so nothing is cut */
+    .pk.contain img { object-fit:contain; padding:32px; }
+    .pk.contain-sm img { object-fit:contain; padding:24px; }
+
+    .pk-cap {
+      position:absolute; bottom:0; right:0; left:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 100%);
+      padding:32px 18px 14px; z-index:2;
+    }
+    .pk-cap p   { font-size:13px; font-weight:600; color:white; }
+    .pk-cap span { font-size:11px; color:rgba(255,255,255,0.6); }
+
+    .pack-tiers {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      border-bottom:1px solid var(--light);
+    }
+    .pk-t { padding:44px 52px; border-left:1px solid var(--light); }
+    .pk-t:last-child { border-left:none; }
+    .pk-n {
+      font-family:'Frank Ruhl Libre',serif; font-size:44px; font-weight:900;
+      color:rgba(18,181,197,0.2); line-height:1; margin-bottom:12px;
+    }
+    .pk-t h4 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px; }
+    .pk-t p  { font-size:13px; font-weight:300; color:var(--gray); line-height:1.7; }
+    .pk-t p strong { color:var(--teal-dk); font-weight:600; }
+
+    /* ════════════════════════════════
+       CTA  —  warm gradient, no image
+    ════════════════════════════════ */
+    .s-cta {
+      background:linear-gradient(160deg, var(--cream) 0%, #EEF9FA 60%, var(--cream) 100%);
+      padding:120px 64px;
+      text-align:center; position:relative; overflow:hidden;
+    }
+    .s-cta::before {
+      content:''; position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:min(700px,90vw); height:min(700px,90vw);
+      border-radius:50%; border:1px solid rgba(18,181,197,0.1);
+      pointer-events:none;
+    }
+    .s-cta::after {
+      content:''; position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:min(500px,70vw); height:min(500px,70vw);
+      border-radius:50%; border:1px solid rgba(18,181,197,0.07);
+      pointer-events:none;
+    }
+    .cta-in { position:relative; z-index:2; max-width:700px; margin:0 auto; }
+    .cta-in h2 {
+      font-family:'Frank Ruhl Libre',serif;
+      font-size:clamp(36px,5vw,64px); font-weight:900;
+      color:var(--text); line-height:1.1; margin-bottom:24px;
+    }
+    .cta-in h2 em { font-style:normal; color:var(--teal-dk); }
+    .cta-in p {
+      font-size:17px; font-weight:300; color:#555;
+      line-height:1.9; margin-bottom:18px; max-width:540px; margin-left:auto; margin-right:auto;
+    }
+    .cta-stats { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; margin-top:48px; }
+    .cta-stat strong {
+      display:block; font-family:'Frank Ruhl Libre',serif;
+      font-size:42px; font-weight:900; color:var(--teal-dk);
+    }
+    .cta-stat span { font-size:12px; color:var(--gray); display:block; margin-top:2px; line-height:1.5; }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    .footer {
+      background:var(--teal-bg); padding:40px 64px;
+      display:flex; align-items:center; justify-content:space-between;
+      border-top:1px solid rgba(18,181,197,0.1);
+      flex-wrap:wrap; gap:20px;
+    }
+    .f-brand { font-size:13px; color:rgba(255,255,255,0.35); }
+    .f-brand strong { display:block; font-size:14px; color:rgba(255,255,255,0.65); margin-bottom:2px; }
+    .f-conf { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.2); }
+    .f-con  { font-size:13px; color:var(--teal); direction:ltr; text-align:left; }
+    .f-con strong { display:block; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.25); font-weight:400; margin-bottom:3px; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media(max-width:900px){
+      .hero,.insp-intro,.power-wrap,.gender-row,.gender-row.rev,.pack-hd { grid-template-columns:1fr; }
+      .hero-r  { min-height:300px; }
+      .hero-l,.insp-txt,.power-txt,.g-info { padding:56px 32px; }
+      .gender-row.rev .g-img,.gender-row.rev .g-info { order:unset; }
+
+      .insp-grid { grid-template-columns:1fr 1fr; height:auto; }
+      .insp-grid > div { min-height:220px; }
+
+      .pack-grid { grid-template-rows:320px; }
+      .pack-tiers { grid-template-columns:1fr; }
+      .pk-t { border-left:none; border-top:1px solid var(--light); }
+
+      .q-grid,.p-cols { grid-template-columns:1fr; }
+      .s-quotes,.s-price { padding:64px 32px; }
+      .cta-stats { gap:24px; }
+      .footer { padding:32px; flex-direction:column; text-align:center; }
+      .pack-hd { padding:64px 32px 40px; gap:24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="hero-logo">
+      <img src="images/LOGO.jpg" alt="עמית לדרך" />
+    </div>
+    <p class="hero-collab">עמית לדרך × Diana Rafael Jewelry</p>
+    <h1 class="hero-h1">טבעת</h1>
+    <h1 class="hero-h1-sub">המצפן</h1>
+    <p class="hero-tag">
+      תכשיט ייחודי שמגייס כספים, מחזק קשרים,
+      ומזכיר לנו — כולנו — מי אנחנו בשביל מי.
+    </p>
+    <div class="hero-scroll">
+      <div class="hero-scroll-ln"></div>
+      <span>גלול למטה</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <img src="images/ring-men-rose.png" alt="טבעת המצפן — גברים רוז גולד" />
+  </div>
+</section>
+
+
+<!-- ════════ INSPIRATION ════════ -->
+<section class="s-insp">
+
+  <div class="insp-intro">
+    <div class="insp-txt">
+      <p class="lbl">ההשראה</p>
+      <div class="rule"></div>
+      <h2>כשסמל ארגון הופך<br/>ל<em>תכשיט שכולם עונדים</em></h2>
+      <p>
+        המצפן הוא סמל עמית לדרך — כלי שנותן כיוון, שמנחה,
+        שמזכיר לנו לאן אנחנו הולכים גם בחשכה.
+        כי זה בדיוק מה שהארגון עושה: הוא המצפן של חיילים
+        שחזרו הביתה בלי לדעת לאן ללכת.
+      </p>
+      <p>
+        טבעת המצפן מתרגמת את הסמל הזה לתכשיט שאלגנטי,
+        בר-זיהוי, ומדבר לכולם — גברים, נשים, ילדים,
+        לוחמים ואזרחים כאחד.
+      </p>
+      <blockquote>
+        <p>"כשאתה יוצא מהצבא אתה חושב רק על איך לשרוד את
+        היום הזה. השאלה 'מה אני רוצה להיות כשאגדל' —
+        זו פריווילגיה."</p>
+        <cite>— משתתף בתוכנית עמית לדרך</cite>
+      </blockquote>
+    </div>
+    <div class="insp-img">
+      <img src="images/mentor-3.png" alt="פעילות עמית לדרך" />
+    </div>
+  </div>
+
+  <div class="insp-grid">
+    <div>
+      <img src="images/mentor-2.png" alt="מנטור ומודרך — שטח" style="object-position:center" />
+      <div class="ic"><p>מנטורים ומודרכים</p><span>פעילות שטח — עמית לדרך</span></div>
+    </div>
+    <div>
+      <img src="images/mentor-1.avif" alt="ליווי אישי" />
+      <div class="ic"><p>ליווי אישי</p><span>עמית לדרך בפעולה</span></div>
+    </div>
+    <div>
+      <img src="images/quote.avif" alt="ציטוט" />
+    </div>
+  </div>
+
+  <div class="press">
+    <span class="press-lbl">כפי שסוקר ב-</span>
+    <span class="press-item"><strong>מעריב</strong> — "אחרי 6 שנות פעילות: עמותה המסייעת לחיילים משוחררים"</span>
+    <div class="press-sep"></div>
+    <span class="press-item"><strong>עיגול לטובה</strong> — ליווי והעצמת חיילים משוחררים</span>
+    <div class="press-sep"></div>
+    <span class="press-item"><strong>כל-זכות</strong> — ארגוני תמיכה בחיילים משוחררים</span>
+  </div>
+
+</section>
+
+
+<!-- ════════ COMPASS POWER ════════ -->
+<section class="s-power">
+  <div class="power-wrap">
+
+    <div class="power-img">
+      <img src="images/ring-men-yellow.png" alt="Through-Finger View — כיוון הטבעת" />
+    </div>
+
+    <div class="power-txt">
+      <p class="lbl">כוח הטבעת</p>
+      <div class="rule"></div>
+      <h2>אתה שולט<br/>ב<span>כיוון<br/>של חייך</span></h2>
+      <p>
+        כשמסתכלים על הטבעת מה-Through-Finger View —
+        רואים עיגול עם חץ קטן שיוצא ממנו ומצביע החוצה
+        מהמרכז, יושב על ההיקף החיצוני. בדיוק כמו מחוג מצפן.
+      </p>
+      <p>
+        על האצבע, זה עמוק יותר: <strong>על-ידי כך שאתה שולט
+        בכיוון שאליו מצביע החץ — אתה מזכיר לעצמך שאתה
+        שולט בכיוון של חייך.</strong>
+      </p>
+      <ul class="power-pts">
+        <li>
+          <span class="pt-n">01</span>
+          <div class="pt-b">
+            <strong>עבור הלוחמים</strong>
+            <span>המצפן תמיד איתם — תזכורת שיש כיוון ומי שנותן עורף</span>
+          </div>
+        </li>
+        <li>
+          <span class="pt-n">02</span>
+          <div class="pt-b">
+            <strong>עבור החברה</strong>
+            <span>אנחנו חלק מהמצפן הקולקטיבי של ישראל</span>
+          </div>
+        </li>
+        <li>
+          <span class="pt-n">03</span>
+          <div class="pt-b">
+            <strong>עבור כולנו יחד</strong>
+            <span>אנחנו המצפן אחד של השני — בשמחה ובמשבר כאחד</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════ COLLECTION ════════ -->
+<section class="s-coll">
+
+  <div class="coll-hd">
+    <p class="lbl" style="display:flex;justify-content:center">הקולקציה</p>
+    <div class="rule rule-c"></div>
+    <h2>לכל מי שרוצה<br/>לשאת את המצפן</h2>
+    <p>כסף, ציפוי זהב וזהב מלא עם יהלומים — לגברים, לנשים, לכולם</p>
+  </div>
+
+  <!-- WOMEN -->
+  <div class="gender-row">
+    <div class="g-img">
+      <img src="images/ring-women-rose-yellow.png" alt="טבעת המצפן נשים" style="padding:80px;" />
+    </div>
+    <div class="g-info">
+      <p class="g-gender">נשים</p>
+      <h3 class="g-name">טבעת המצפן<br/>גרסה נשית</h3>
+      <p class="g-desc">
+        פרופיל דק ועדין, חץ משובץ יהלומים קטנים —
+        ייחודי, בר-זיהוי, ומלא משמעות.
+      </p>
+      <ul class="g-vars">
+        <li><strong>כסף 925</strong> <span>+ זירקונים</span></li>
+        <li><strong>כסף 925 + ציפוי זהב</strong> <span>+ יהלומי מעבדה</span></li>
+        <li><strong>זהב צהוב 14K</strong> <span>+ יהלומים טבעיים</span></li>
+        <li><strong>רוז גולד 14K</strong> <span>+ יהלומים טבעיים</span></li>
+        <li><strong>זהב לבן 14K</strong> <span>+ יהלומים טבעיים</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MEN -->
+  <div class="gender-row rev">
+    <div class="g-img">
+      <img src="images/ring-men-white.png" alt="טבעת המצפן גברים" />
+    </div>
+    <div class="g-info">
+      <p class="g-gender">גברים</p>
+      <h3 class="g-name">טבעת המצפן<br/>גרסה גברית</h3>
+      <p class="g-desc">
+        פרופיל רחב ומסיבי, אותו חץ משובץ —
+        גרסה שמדברת בשפת הגבריות מבלי לוותר על עידון.
+      </p>
+      <ul class="g-vars">
+        <li><strong>כסף 925</strong> <span>+ זירקונים</span></li>
+        <li><strong>כסף 925 + ציפוי זהב</strong> <span>+ יהלומי מעבדה</span></li>
+        <li><strong>זהב צהוב 14K</strong> <span>+ יהלומים טבעיים</span></li>
+        <li><strong>רוז גולד 14K</strong> <span>+ יהלומים טבעיים</span></li>
+        <li><strong>זהב לבן 14K</strong> <span>+ יהלומים טבעיים</span></li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section class="s-quotes">
+  <div class="q-hd">
+    <p class="lbl">קולות מהשטח</p>
+    <div class="rule"></div>
+    <h2>מה אומרים הלוחמים<br/>שהיו שם</h2>
+    <p>עדויות ממשתתפים ומנטורים של עמית לדרך</p>
+  </div>
+  <div class="q-grid">
+
+    <div class="q-card feat">
+      <div class="q-m">"</div>
+      <p class="q-t">אני מרגיש כמו עמוד שהרוח מנסה להפיל — אבל עמית לדרך תומך בי מכל כיוון. לא ידעתי שאנשים יכולים להיות שם בשבילך ככה.</p>
+      <div class="q-a">
+        <div class="q-dot">🎖️</div>
+        <div><div class="q-name">אריאל</div><div class="q-role">בוגר התוכנית</div></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-m">"</div>
+      <p class="q-t">כשאתה יוצא מהצבא אתה חושב רק על איך לשרוד את היום הזה. השאלה "מה אני רוצה להיות כשאגדל" — זו פריווילגיה שלא הכרתי. עמית לדרך נתן לי את הפריווילגיה הזו.</p>
+      <div class="q-a">
+        <div class="q-dot">⭐</div>
+        <div><div class="q-name">משתתף בתוכנית</div><div class="q-role">עמית לדרך</div></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-m">"</div>
+      <p class="q-t">המנטורים עוברים שינוי לא פחות משמעותי מהחיילים עצמם. המפגשים יוצרים השפעה חברתית שמשנה עמדות ומחזקת אמפתיה.</p>
+      <div class="q-a">
+        <div class="q-dot">🤝</div>
+        <div><div class="q-name">עמית ספירא צור</div><div class="q-role">סגנית מנכ"ל — מעריב</div></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-m">"</div>
+      <p class="q-t">צעירים לומדים דרכים חדשות להתמודד עם אתגרי החיים, ובין הדברים החשובים ביותר — להבין שהם לא לבד. אני כל כך שמח שהצטרפתי.</p>
+      <div class="q-a">
+        <div class="q-dot">💛</div>
+        <div><div class="q-name">בוגר התוכנית</div><div class="q-role">עמית לדרך</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════ PRICING ════════ -->
+<section class="s-price">
+  <div class="p-hd">
+    <p class="lbl" style="display:flex;justify-content:center">תמחור</p>
+    <div class="rule rule-c"></div>
+    <h2>מסלולי הרכישה</h2>
+    <p>חלק מכל מכירה הולך ישירות לפעילות עמית לדרך</p>
+  </div>
+  <div class="p-cols">
+
+    <div class="p-tier">
+      <div class="pt-h">
+        <div class="pt-lbl">מסלול כסף</div>
+        <div class="pt-ttl">Silver</div>
+        <div class="pt-sub">כסף 925 | זירקונים + יהלומי מעבדה</div>
+      </div>
+      <div class="pt-b">
+        <div class="pt-row"><div class="pt-d">טבעת נשים — Silver<small>כסף 925 | זירקונים</small></div><div class="pt-p">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת נשים — Gold Plated<small>כסף + ציפוי זהב | יהלומי מעבדה</small></div><div class="pt-p">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת גברים — Silver<small>כסף 925 | זירקונים</small></div><div class="pt-p">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת גברים — Gold Plated<small>כסף + ציפוי זהב | יהלומי מעבדה</small></div><div class="pt-p">₪[XXX]</div></div>
+      </div>
+    </div>
+
+    <div class="p-tier prem">
+      <div class="pt-h gold">
+        <div class="pt-lbl lt">מסלול פרמיום</div>
+        <div class="pt-ttl">Gold</div>
+        <div class="pt-sub">זהב 14K | יהלומים טבעיים | אריזת פרמיום</div>
+      </div>
+      <div class="pt-b">
+        <div class="pt-row"><div class="pt-d">טבעת נשים — זהב צהוב / רוז / לבן<small>14K | יהלומים טבעיים | אריזת פרמיום</small></div><div class="pt-p g">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת גברים — זהב צהוב 14K<small>יהלומים טבעיים | אריזת פרמיום</small></div><div class="pt-p g">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת גברים — רוז גולד 14K<small>יהלומים טבעיים | אריזת פרמיום</small></div><div class="pt-p g">₪[XXX]</div></div>
+        <div class="pt-row"><div class="pt-d">טבעת גברים — זהב לבן 14K<small>יהלומים טבעיים | אריזת פרמיום</small></div><div class="pt-p g">₪[XXX]</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════ PACKAGING ════════ -->
+<section class="s-pack">
+
+  <div class="pack-hd">
+    <div>
+      <p class="lbl">אריזה וחוויה</p>
+      <div class="rule"></div>
+      <h2>כל טבעת<br/>מגיעה עם<br/><em>סיפור</em></h2>
+    </div>
+    <p>
+      האריזה היא חלק בלתי נפרד מהחוויה. מהרגע שהמקבל
+      פותח את הקופסה — הוא כבר חלק מהסיפור של עמית לדרך.
+      הברושור שבפנים נושא את הציטוט שעל הטבעת:
+      <strong style="color:var(--teal-dk)">"אני שולט בכיוון אליו הולכים חיי"</strong>
+    </p>
+  </div>
+
+  <div class="pack-tiers">
+    <div class="pk-t">
+      <div class="pk-n">01</div>
+      <h4>קופסת תכשיטים</h4>
+      <p>עם <strong>לוגו עמית לדרך</strong> — כלול בכל גרסאות הטבעת. שתי רמות: מגירה (Silver) ופתיחה יוקרתית (Gold).</p>
+    </div>
+    <div class="pk-t">
+      <div class="pk-n">02</div>
+      <h4>ברושור הסיפור</h4>
+      <p>כרטיס מודפס עם <strong>ההשראה, המשמעות</strong> והציטוט שעל הטבעת — לכל מי שמקבל אותה.</p>
+    </div>
+    <div class="pk-t">
+      <div class="pk-n">03</div>
+      <h4>אריזת פרמיום — Gold בלבד</h4>
+      <p>קופסה יוקרתית עם <strong>גימור מיוחד, ריפוד פנימי</strong> ועיצוב Gift-Ready. המתנה מתחילה עוד לפני שפותחים.</p>
+    </div>
+  </div>
+
+  <div class="pack-grid">
+    <div class="pk contain">
+      <img src="images/box-cover.png" alt="אריזת עמית לדרך — שתי הקופסאות" />
+      <div class="pk-cap">
+        <p>סט האריזה המלא — עמית לדרך</p>
+        <span>קופסת Silver + קופסת Gold | לוגו מוטבע</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ════════ CTA ════════ -->
+<section class="s-cta">
+  <div class="cta-in">
+    <p class="lbl" style="display:flex;justify-content:center">הצטרפו אלינו</p>
+    <div class="rule rule-c rule-o"></div>
+    <h2>כי כולנו יכולים<br/>להיות <em>המצפן</em><br/>של מישהו אחר</h2>
+    <p>
+      טבעת המצפן היא לא רק תכשיט — היא הצהרה.
+      כשאתה עונד אותה, אתה אומר: אני רואה את הלוחמים שלנו.
+      אני חלק מהדרך שלהם.
+    </p>
+    <p>
+      ויחד, עם כל טבעת שנמכרת, הופכים כולנו
+      למצפן הקולקטיבי שלהם חזרה הביתה.
+    </p>
+    <div class="cta-stats">
+      <div class="cta-stat"><strong>3</strong><span>רמות מחיר<br/>לכל תקציב</span></div>
+      <div class="cta-stat"><strong>∞</strong><span>מי שיכול<br/>לענוד אותה</span></div>
+      <div class="cta-stat"><strong>1</strong><span>מסר שמאחד<br/>את כולנו</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="f-brand">
+    <strong>Diana Rafael Jewelry</strong>
+    diana@dianarafael.com
+  </div>
+  <div class="f-conf">Confidential Proposal · 2025</div>
+  <div class="f-con">
+    <strong>Contact</strong>
+    info@amitladerech.org
+  </div>
+</footer>
+
+</body>
+</html>

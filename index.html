@@ -311,12 +311,12 @@
     .pack-hd h2 em { font-style:normal; color:var(--teal-dk); }
     .pack-hd p { font-size:15px; font-weight:300; color:#555; line-height:1.9; max-width:400px; }
 
-    /* full-width box-cover only */
+    /* two images side by side */
     .pack-grid {
       display:grid;
-      grid-template-columns:1fr;
-      grid-template-rows:560px;
-      gap:0;
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:620px;
+      gap:3px;
     }
     .pk { position:relative; overflow:hidden; background:var(--warm); }
     .pk img { height:100%; }
@@ -413,7 +413,7 @@
       .insp-grid { grid-template-columns:1fr 1fr; height:auto; }
       .insp-grid > div { min-height:220px; }
 
-      .pack-grid { grid-template-rows:320px; }
+      .pack-grid { grid-template-columns:1fr; grid-template-rows:340px 340px; }
       .pack-tiers { grid-template-columns:1fr; }
       .pk-t { border-left:none; border-top:1px solid var(--light); }
 
@@ -750,6 +750,9 @@
         <p>סט האריזה המלא — עמית לדרך</p>
         <span>קופסת Silver + קופסת Gold | לוגו מוטבע</span>
       </div>
+    </div>
+    <div class="pk contain">
+      <img src="images/brochure.png" alt="ברושור" />
     </div>
   </div>
 
